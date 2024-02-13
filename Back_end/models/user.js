@@ -47,12 +47,24 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     role: {
-      type: DataTypes.STRING,
-      defaultValue: "Reguler",
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     }
   }, {
     sequelize,
     modelName: 'User',
+    hooks: {
+      beforeCreate: (user) => {
+        if (user.password) {      
+          user.password = hashPassword(user.password);
+        }
+      },
+      beforeUpdate: (user) => {
+        if (user.password) {
+          user.password = hashPassword(user.password);
+        }
+      },
+    },
   });
   return User;
 };
