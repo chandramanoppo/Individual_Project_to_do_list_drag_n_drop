@@ -1,0 +1,25 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "chandra22",
+    "database": "individual_project_to_do_list",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "port": 2201
+  },
+  "test": {
+    "username": "postgres",
+    "password": "chandra22",
+    "database": "individual_project_to_do_list_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "port" :2201
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
